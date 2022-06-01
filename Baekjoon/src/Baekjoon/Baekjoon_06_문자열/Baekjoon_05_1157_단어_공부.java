@@ -1,9 +1,10 @@
 package Baekjoon.Baekjoon_06_문자열;
 
-public class Baekjoon_02 {
+public class Baekjoon_05_1157_단어_공부 {
 
 	public static void main(String[] args) {
 		// https://www.acmicpc.net/problem/11720
-		// 3. 10809_알파벳 찾기
+		// 5. 1157_단어 공부
+		
 	}
 }
