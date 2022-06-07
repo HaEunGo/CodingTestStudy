@@ -15,6 +15,7 @@ public class Baekjoon_07_2908_상수 {
 		// 상수 입력
 		// -> 거꾸로 입력(StringBuffer) -> 다시 int로
 		// -> 거꾸로 입력한 값으로 대소 비교
+		// https://applepick.tistory.com/80
 		
 		String[] arr = br.readLine().split(" ");
 		
