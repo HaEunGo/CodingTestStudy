@@ -14,16 +14,17 @@ public class Baekjoon_09_2941_크로아티아_알파벳 {
 		// https://hellodoor.tistory.com/86 참고
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
+		String arr = br.readLine();
+		
 		String str[] = {"c=", "c-", "dz=", "d-", "lj", "s=", "z="};
 		
-		String arr = br.readLine().toLowerCase();
-		
 		for(int i = 0; i < str.length; i++) {
-			if(arr.contains(str[i]))
+			if(arr.contains(str[i])) {
 				arr = arr.replace(str[i], "!");
 			}
-			System.out.println(arr.length());
 		}
+		System.out.println(arr.length());
+	}
 //		// 총합
 //		int count = 0;
 //		
