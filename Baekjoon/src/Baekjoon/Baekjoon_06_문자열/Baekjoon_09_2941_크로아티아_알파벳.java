@@ -12,32 +12,52 @@ public class Baekjoon_09_2941_크로아티아_알파벳 {
 		
 		// 알파벳 문자열 반환 -> 갯수 세기
 		// https://hellodoor.tistory.com/86 참고
+		// https://st-lab.tistory.com/68 참고
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String str = br.readLine();
 		
-		String arr = br.readLine();
+		int len = str.length();
+		int count = 0;
 		
-		String str[] = {"c=", "c-", "dz=", "d-", "lj", "s=", "z="};
-		
-		for(int i = 0; i < str.length; i++) {
-			if(arr.contains(str[i])) {
-				arr = arr.replace(str[i], "!");
+		for(int i = 0; i < len; i++) {
+			
+			char ch = str.charAt(i);
+			
+			// 만약 ch가 c라면
+			if(ch == 'c' && i < len - 1) {
+				
+				// 만약 ch 다음 문자가 '=' 또는 '-' 이라면
+				if(str.charAt(i + 1) == '=' || str.charAt(i + 1) == '-') {
+					
+					// i + 1까지가 하나의 문자이므로 다음 문자를 건너 뛰기 위해 1 증가시켜줌
+					i++;
+				}
+			} else if(ch == 'd' && i < len - 1) {
+				if(str.charAt(i + 1) == '-') {
+					// d- 일 경우
+					i++;
+				} else if(str.charAt(i + 1) == 'z' && i < len - 2) {
+					
+					if(str.charAt(i + 2) == '=') {
+						// dz= 일 경우
+						i += 2;
+					}
+				}
+				
+			} else if ((ch == 'l' || ch == 'n') && i < len - 1) {
+				if(str.charAt(i + 1) == 'j') {
+					// lj 또는 nj 일 경우
+					i++;
+				}
+			} else if((ch == 's' || ch == 'z') && i < len - 1) {
+				if(str.charAt(i + 1) == '=') {
+					// s= 또는 z= 일 경우
+					i++;
+				}
 			}
+			count++;
 		}
-		System.out.println(arr.length());
+		
+		System.out.println(count);
 	}
-//		// 총합
-//		int count = 0;
-//		
-//		// C 개수
-//		int C = arr.length();
-//		
-//		for(int i = 0; i < C; i++) {
-//			
-//			switch (arr.charAt(i)) {
-//			case 'c' : case 'd' : case 'z' : case 'l' : case 'j' : case 'n' : case 's' : 
-//				count += 1;
-//				
-//				break;
-//			}
-//		}
 }
