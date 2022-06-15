@@ -12,18 +12,38 @@ public class Baekjoon_10_1316_그룹_단어_체커 {
 		// 10. 1316_그룹_단어_체커
 		
 		// 연속되는 문자 개수
+		// https://engpro.tistory.com/147 참고
 		int wordCount = Integer.parseInt(br.readLine());
-		int gwCount = 0;
+		int count = 0;
 		
 		for(int i = 0; i < wordCount; i++) {
 			if(check() == true) {
-				gwCount++;
+				count++;
 			}
 		}
+		System.out.println(count);
 	}
 	
-	public static boolean check() {
-		return false;
+	public static boolean check() throws IOException {
+		boolean[] check = new boolean[26];
+		int t = 0;
+		String str = br.readLine();
 		
+		for(int i = 0; i < str.length(); i++) {
+			int now = str.charAt(i);
+			
+			if(t != now) {
+				
+				if(check[now - 'a'] == false) {
+					check[now - 'a'] = true;
+					t = now;
+				} else {
+					return false;
+				}
+			} else {
+				continue;
+			}
+		}
+		return true;
 	}
 }
