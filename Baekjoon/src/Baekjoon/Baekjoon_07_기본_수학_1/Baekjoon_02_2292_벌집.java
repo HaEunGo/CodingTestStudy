@@ -9,6 +9,8 @@ public class Baekjoon_02_2292_벌집 {
 	public static void main(String[] args) throws IOException {
 		// https://www.acmicpc.net/problem/2292
 		// 2. 2292_벌집
+		
+		// https://hongku.tistory.com/245 참고
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
