@@ -8,7 +8,7 @@ public class Baekjoon_03_1193_분수찾기 {
 
 	public static void main(String[] args) throws IOException {
 		// https://www.acmicpc.net/problem/1193
-		// 3. 1193_벌집
+		// 3. 1193_분수찾기
 		
 		// https://thinmug.tistory.com/9 참고
 		// https://st-lab.tistory.com/74
