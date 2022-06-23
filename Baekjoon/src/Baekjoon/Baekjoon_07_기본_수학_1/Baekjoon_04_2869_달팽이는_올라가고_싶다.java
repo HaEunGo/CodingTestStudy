@@ -19,24 +19,16 @@ public class Baekjoon_04_2869_달팽이는_올라가고_싶다 {
 		
 		// https://st-lab.tistory.com/75 참고
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		
 		int A = Integer.parseInt(st.nextToken());
 		int B = Integer.parseInt(st.nextToken());
 		int V = Integer.parseInt(st.nextToken());
 		
-		int sum = 0;
+		int sum = (V - B) / (A - B);
+		if((V - B) % (A - B) != 0)
+			sum++;
 		
-		// sum이 V랑 같지 않으면 sum에 A를 더하고, B를 빼준 뒤 i++가 되도록 한다.
-		// 만약 sum == V 순간이 오면 i를 출력해주면 끝
-		for(int i = 0; sum != V; i++) {
-			sum += A;
-			sum -= B;
-			
-			if(sum == V) {
-				System.out.println(i);
-				break;
-			}
-		}
+		System.out.println(sum);
 	}
 }
