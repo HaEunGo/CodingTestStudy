@@ -20,17 +20,19 @@ public class Baekjoon_05_10250_ACM_호텔 {
 		// https://st-lab.tistory.com/77
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		StringTokenizer st = new StringTokenizer(br.readLine()," ");
-
-		int T = Integer.parseInt(st.nextToken());
+		int T = Integer.parseInt(br.readLine()); // 테스트 케이스
 		
 		for(int i = 0; i < T; i++) {
-			int H = Integer.parseInt(st.nextToken());
-			int W = Integer.parseInt(st.nextToken());
-			int N = Integer.parseInt(st.nextToken());
-			int x = (N / H) + 1;
-			int y = N % H;
-			if(N % H == 0) {
+			StringTokenizer st = new StringTokenizer(br.readLine()," ");
+			
+			int H = Integer.parseInt(st.nextToken()); // 호텔의 층 수
+			int W = Integer.parseInt(st.nextToken()); // 층의 방 갯수
+			int N = Integer.parseInt(st.nextToken()); // N번째 손님
+			
+			int x = N / H + 1; // 호수 = 몫 + 1
+			int y = N % H; 	   // 층 = 나머지
+			
+			if(N % H == 0) { // 나머지가 0일 경우
 				x = N / H;
 				y = H;
 			}
